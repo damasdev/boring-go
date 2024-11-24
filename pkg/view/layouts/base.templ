@@ -1,0 +1,19 @@
+package layouts
+
+import "github.com/damasdev/boring-go/pkg/view"
+
+templ Base(title string) {
+	<!DOCTYPE html>
+	<html lang="en" x-data="{theme: localStorage.getItem('theme') || 'light'}" :class="theme">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ title }</title>
+			<script defer src={ view.JS("alpine.js") }></script>
+			<link rel="stylesheet" href={ view.CSS("styles.css") }/>
+		</head>
+		<body class="bg-gray-100 dark:bg-gray-900">
+			{ children... }
+		</body>
+	</html>
+}
