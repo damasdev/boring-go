@@ -1,0 +1,23 @@
+package landing
+
+import (
+	"github.com/damasdev/boring-go/pkg/config"
+	"github.com/damasdev/boring-go/pkg/view/components"
+	"github.com/damasdev/boring-go/pkg/view/layouts"
+)
+
+templ LandingPage() {
+	@layouts.Base(config.APP_NAME) {
+		<div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center">
+			<div class="mb-4 flex justify-center">
+				@components.ThemeSwitcher()
+			</div>
+			<h1 class="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6 uppercase">
+				{ config.APP_NAME }
+			</h1>
+			<p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
+				{ config.APP_DESC }
+			</p>
+		</div>
+	}
+}
